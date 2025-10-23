@@ -82,6 +82,25 @@ configure setting in local git.
 $ git config user.email "juanortizcc1991@gmail.com"
 $ git config user.name "juan ortiz"
 ```
+## git comit -m mesagge
+consolidates the changes in local repository
+```sh
+$ git commit -m "cambios"
+```
+## git push
+pushes the changes from local to remote repository (origin)
+```sh
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 1.86 KiB | 950.00 KiB/s, done.  
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/jota23climb/neoland-202510
+   c0018b0..75ca5c8  main -> main
+```
+
 
 
 
