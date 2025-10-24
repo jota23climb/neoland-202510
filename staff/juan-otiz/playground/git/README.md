@@ -100,7 +100,28 @@ Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To https://github.com/jota23climb/neoland-202510
    c0018b0..75ca5c8  main -> main
 ```
- 
+ ## git log
+
+ show commits history ordered descending by time.
+
+ ```sh
+ commit df7f8d7292ec92e4f1b99e86c2ff86cae9a0120b (HEAD -> main, orgin/main, orgin/HEAD)
+Author: juan <juanortizcc1991@gmail.com>
+Date:   Fri Oct 24 19:33:40 2025 +0200
+
+    add nuevos comandos
+
+commit d66cb8a7ac79335598122589c52a86336f09fab3
+Author: juan <juanortizcc1991@gmail.com>
+Date:   Thu Oct 23 22:12:18 2025 +0200
+
+    cambios nuevos
+
+commit 75ca5c8ed380049a69011390cffeb3eb249c4f07
+Author: juan <juanortizcc1991@gmail.com>
+Date:   Thu Oct 23 22:04:25 2025 +0200
+```
+
 
 
 
