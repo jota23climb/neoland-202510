@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+<style>
+    
+    .mi-clase{
+        border-style: solid;
+        background-color: rgb(255, 25, 0);
+
+    }
+
+    .mi-clase2{
+        border-style: solid;
+        background-color: aqua;
+    }
+</style>
+-->
+</head>
+
+<body>
+    <h1>hello,DOM</h1>
+    <div>
+        <p>A ver, que le ponemos</p>
+    </div>
+
+    <script>
+        document.childNodes[1].childNodes[2].childNodes[1].style.backgroundColor = 'black'
+        document.childNodes[1].childNodes[2].childNodes[1].style.color = 'red'
+        document.childNodes[1].childNodes[2].childNodes[1].style.paddingLeft = '.5rem'
+        document.childNodes[1].childNodes[2].childNodes[3].style.color = 'red'
+
+        const div1 = document.createElement('div')
+        div1.textContent = 'Descrubiendo DOM'
+        div1.style.borderStyle = 'solid'
+        div1.style.backgroundColor = 'rgb(405,548,215)'
+        document.body.appendChild(div1)
+        div1.className = 'mi-clase'
+
+        const div = document.createElement('div')
+        div.textContent = 'Descrubiendo DOM'
+        div.style.borderStyle = 'solid'
+        div.style.backgroundColor = 'rgb(405,548,215)'
+        document.body.appendChild(div)
+        div.className = 'mi-clase'
+
+
+
+
+
+        const box = document.createElement('div')
+        box.style.width = '100px'
+        box.style.height = '100px'
+        box.style.backgroundColor = 'green'
+        document.body.appendChild(box)
+
+        const minibox = document.createElement('div')
+        minibox.style.width = '100px'
+        minibox.style.height = '100px'
+        minibox.style.backgroundColor = 'red'
+        minibox.style.top = ' absolute'
+        document.body.appendChild(box)
+
+
+        // muñeco
+        const cuerpo = document.createElement('div')
+        cuerpo.style.width = '250px'
+        cuerpo.style.height = '300px'
+        cuerpo.style.background = 'linear-gradient(to bottom, #ffe6e6, #ff0000)'
+        cuerpo.style.position = 'absolute'
+        cuerpo.style.borderStyle = 'solid'
+        cuerpo.style.borderColor = 'black'
+        cuerpo.style.top = '300px'
+        cuerpo.style.left = '100px'
+        cuerpo.style.borderRadius = '35%'
+        document.body.appendChild(cuerpo)
+
+
+        const mochila = document.createElement('div')
+        mochila.style.width = '76px'
+        mochila.style.height = '142px'
+        mochila.style.backgroundColor = 'red'
+        mochila.style.position = 'absolute'
+        mochila.style.top = '70px'
+        mochila.style.left = '-50px'
+        mochila.style.borderRadius = '35%'
+        mochila.style.borderStyle = 'solid'
+        mochila.style.borderColor = 'black'
+        mochila.style.zIndex = '-1'
+        cuerpo.appendChild(mochila)
+
+
+
+
+        const antifaz = document.createElement('div')
+        antifaz.style.width = '200px'
+        antifaz.style.height = '100px'
+        antifaz.style.background = 'linear-gradient(15deg, blue, lightblue)'
+        antifaz.style.position = 'absolute'
+        antifaz.style.top = '70px'
+        antifaz.style.left = '110px'
+        antifaz.style.borderStyle = 'solid'
+        antifaz.style.borderColor = 'black'
+        antifaz.style.borderRadius = '40%'
+
+        cuerpo.appendChild(antifaz)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
