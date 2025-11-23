@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinary</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+
+        function Vaccine(id, name, description) {
+            this.id = id
+            this.name = name
+            this.description = description
+        }
+
+        function Owner(id, name, surname, address, phone, email) {
+            this.id = id
+            this.name = name
+            this.surname = surname
+            this.address = address
+            this.phone = phone
+            this.email = email
+            this.active = true
+        }
+
+        function Pet(ownerId, id, name, yearOfBirth, species, gender, race, colors) {
+            this.ownerId = ownerId
+            this.id = id
+            this.name = name
+            this.yearOfBirth = yearOfBirth
+            this.species = species
+            this.gender = gender
+            this.race = race
+            this.colors = colors
+            this.vaccines = []
+        }
+
+        Pet.prototype.saveVaccine = function (vaccineId, expirationDate) {
+            this.vaccines.push({
+                vaccineId: vaccineId,
+                expirationDate: expirationDate
+            })
+        }
+
+        function Database() {
+            this.users = []
+            this.owners = []
+            this.vaccines = []
+            this.pets = []
+        }
+        const data = new Database()
+
+        Database.prototype.findOwnerById = function (ownerId) {
+            for (let i = 0; i < this.owners.length; i++) {
+                const owner = this.owners[i]
+                if (owner.id === ownerId) return owner
+            }
+            return null
+        }
+
+        Database.prototype.findPetsByOwnerId = function (ownerId) {
+            const foundPets = []
+            for (let i = 0; i < this.pets.length; i++) {
+                const pet = this.pets[i]
+                if (pet.ownerId === ownerId) foundPets.push(pet)
+            }
+            return foundPets
+        }
+
+        Database.prototype.findPetById = function (petId) {
+            for (let i = 0; i < this.pets.length; i++) {
+                const pet = this.pets[i]
+                if (pet.id === petId) return pet
+            }
+            return null
+        }
+
+        Database.prototype.addUser = function (user) {
+            this.users.push(user)
+        }
+
+        Database.prototype.findUserByUsername = function (username) {
+            for (let i = 0; i < this.users.length; i++) {
+                const user = this.users[i]
+                if (user.username === username) return user
+            }
+            return null
+        }
+
+        Database.prototype.removeVaccineByName = function (name) {
+            for (let i = 0; i < this.vaccines.length; i++) {
+                if (this.vaccines[i].name === name) {
+                    this.vaccines.splice(i, 1)
+                    i-- // Ajustamos el índice porque cambiamos la longitud del array
+                }
+            }
+        }
+
+
+        Database.prototype.removeOwnerByName = function (name) {
+            for (let i = 0; i < this.owners.length; i++) {
+                if (this.owners[i].name === name) {
+                    this.owners.splice(i, 1)
+                    i-- // Ajustamos el índice porque cambiamos la longitud del array
+                }
+            }
+        }
+
+
+        Database.prototype.addVaccine = function (vaccine) {
+            this.vaccines.push(vaccine)
+        }
+
+        Database.prototype.addOwner = function (owner) {
+            this.owners.push(owner)
+        }
+
+        Database.prototype.addPet = function (pet) {
+            this.pets.push(pet)
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
