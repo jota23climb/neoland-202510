@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>robot</title>
+</head>
+
+<body>
+    <script>
+        function Robot(color) {
+            this.container = document.createElement('div');
+
+            this.container.style.backgroundColor = color;
+            this.container.style.width = '100px';
+            this.container.style.height = '100px';
+
+            this.container.style.position = 'absolute';
+            this.container.style.left = '100px';
+            this.container.style.top = '100px';
+        }
+
+        // Crear una instancia del robot
+        const miRobot = new Robot('green');
+
+        // Añadir el div del robot al body
+        document.body.appendChild(miRobot.container);
+
+
+
+
+    </script>
+</body>
+
+</html>

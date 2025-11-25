@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Background (fondo) de mario//
+
+        const fondo = document.createElement('div')
+        fondo.style.width = '800px'
+        fondo.style.height = '600px'
+        fondo.style.background = 'linear-gradient(15deg, blue, lightblue)'
+        fondo.style.position = 'absolute'
+        fondo.style.top = '80px'
+        fondo.style.left = '20px'
+        document.body.appendChild(fondo)
+
+        //Land (tierra) parte inferior
+
+        const land = document.createElement('div')
+        land.style.width = '800px'
+        land.style.height = '200px'
+        land.style.background = '#8B5A2B'
+        land.style.position = 'absolute'
+        land.style.top = '400px'
+        land.style.left = '0px'
+        land.style.zIndex = '10'
+        fondo.appendChild(land)
+
+
+
+
+        //Mario
+
+        const cuerpoMario = document.createElement('div')
+        cuerpoMario.style.width = '100px'
+        cuerpoMario.style.height = '100px'
+        cuerpoMario.style.background = 'blue'
+        cuerpoMario.style.position = 'absolute'
+        cuerpoMario.style.top = '300px'
+        cuerpoMario.style.left = '300px'
+        cuerpoMario.style.zIndex = '10'
+        document.body.appendChild(cuerpoMario)
+
+
+        const cuerpoMario1 = document.createElement('div')
+        cuerpoMario1.style.width = '50px'
+        cuerpoMario1.style.height = '70px'
+        cuerpoMario1.style.background = 'red'
+        cuerpoMario1.style.position = 'absolute'
+        cuerpoMario1.style.top = '30px'
+        cuerpoMario1.style.left = '50px'
+        cuerpoMario1.style.zIndex = '10'
+        cuerpoMario.appendChild(cuerpoMario1)
+
+        const cuerpoMario2 = document.createElement('div')
+        cuerpoMario2.style.width = '45px'
+        cuerpoMario2.style.height = '50px'
+        cuerpoMario2.style.background = 'red'
+        cuerpoMario2.style.position = 'absolute'
+        cuerpoMario2.style.top = '50px'
+        cuerpoMario2.style.left = '80px'
+        cuerpoMario2.style.zIndex = '10'
+        cuerpoMario.appendChild(cuerpoMario2)
+
+        const cuerpoMario3 = document.createElement('div')
+        cuerpoMario3.style.width = '30px'
+        cuerpoMario3.style.height = '50px'
+        cuerpoMario3.style.background = 'red'
+        cuerpoMario3.style.position = 'absolute'
+        cuerpoMario3.style.top = '20px'
+        cuerpoMario3.style.left = '50px'
+        cuerpoMario3.style.zIndex = '10'
+        cuerpoMario.appendChild(cuerpoMario3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

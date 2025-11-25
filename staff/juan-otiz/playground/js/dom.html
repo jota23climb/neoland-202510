@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--
-<style>
-    
-    .mi-clase{
-        border-style: solid;
-        background-color: rgb(255, 25, 0);
 
-    }
+    <style>
+        .mi-clase {
+            border-style: solid;
+            background-color: rgba(255, 25, 0, 0.247);
 
-    .mi-clase2{
-        border-style: solid;
-        background-color: aqua;
-    }
-</style>
--->
+        }
+
+        .mi-clase2 {
+            border-style: solid;
+            background-color: aqua;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -29,41 +28,30 @@
     </div>
 
     <script>
-        document.childNodes[1].childNodes[2].childNodes[1].style.backgroundColor = 'black'
-        document.childNodes[1].childNodes[2].childNodes[1].style.color = 'red'
-        document.childNodes[1].childNodes[2].childNodes[1].style.paddingLeft = '.5rem'
+        document.childNodes[1].childNodes[2].childNodes[1].style.backgroundColor = 'green'
+        document.childNodes[1].childNodes[2].childNodes[1].style.color = 'green'
+        document.childNodes[1].childNodes[2].childNodes[1].style.paddingLeft = '.10rem'
         document.childNodes[1].childNodes[2].childNodes[3].style.color = 'red'
 
         const div1 = document.createElement('div')
         div1.textContent = 'Descrubiendo DOM'
+        div1.style.color = 'orange'
+        div1.style.background = 'linear-gradient(5deg, blue, lightblue)'
+        div1.style.width = '500px'
+        div1.style.height = '120px'
         div1.style.borderStyle = 'solid'
-        div1.style.backgroundColor = 'rgb(405,548,215)'
+        div1.style.borderColor = 'red'
+        div1.style.border = "6px solid"
+        div1.style.borderImage = "linear-gradient(to right, red, blue) 1"
+
+
+
+        div1.style.fontSize = '50px'
         document.body.appendChild(div1)
         div1.className = 'mi-clase'
 
-        const div = document.createElement('div')
-        div.textContent = 'Descrubiendo DOM'
-        div.style.borderStyle = 'solid'
-        div.style.backgroundColor = 'rgb(405,548,215)'
-        document.body.appendChild(div)
-        div.className = 'mi-clase'
 
 
-
-
-
-        const box = document.createElement('div')
-        box.style.width = '100px'
-        box.style.height = '100px'
-        box.style.backgroundColor = 'green'
-        document.body.appendChild(box)
-
-        const minibox = document.createElement('div')
-        minibox.style.width = '100px'
-        minibox.style.height = '100px'
-        minibox.style.backgroundColor = 'red'
-        minibox.style.top = ' absolute'
-        document.body.appendChild(box)
 
 
         // muñeco
@@ -110,7 +98,7 @@
         cuerpo.appendChild(antifaz)
 
 
-
+        //mario==========//
 
 
 
