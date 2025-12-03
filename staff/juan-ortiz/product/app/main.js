@@ -8,7 +8,7 @@ const landingView = document.createElement('div')
 
 const landingTitle = document.createElement('h1')
 landingTitle.textContent = 'MyPet'
-landingTitle.className = 'font-bold'
+landingTitle.className = 'font-bold text -xl'
 landingView.appendChild(landingTitle)
 
 const landingWelcome = document.createElement('p')
@@ -53,7 +53,7 @@ registerView.style.display = 'none'
 
 const registerTitle = document.createElement('h1')
 registerTitle.textContent = 'MyPet'
-registerTitle.className = 'font-bold'
+registerTitle.className = 'font-bold text-xl'
 registerView.appendChild(registerTitle)
 
 const registerSubtitle = document.createElement('h2')
@@ -62,6 +62,7 @@ registerSubtitle.className = 'font-bold'
 registerView.appendChild(registerSubtitle)
 
 const registerForm = document.createElement('form')
+registerForm.className = 'flex flex-col'
 const registerNameLabel = document.createElement('label')
 registerNameLabel.textContent = 'Name'
 registerNameLabel.htmlFor = 'name'
