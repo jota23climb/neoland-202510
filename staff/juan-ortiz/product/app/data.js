@@ -1,7 +1,7 @@
-//models
+// models
 
 function User(id, name, email, username, password, role) {
-    this.id = idt
+    this.id = id
     this.name = name
     this.email = email
     this.username = username
@@ -21,17 +21,18 @@ function Pet(id, userId, chip, name, gender, birthdate, species, race, colors) {
     this.colors = colors
 }
 
-//manager
+// manager
 
 function Data() {
     this.users = []
-    this.userCount = 0
+    this.usersCount = 0
     this.pets = []
     this.petsCount = 0
+    this.loggedInUserId = null
 }
 
 Data.prototype.insertUser = function (user) {
-    this.user.push(user)
+    this.users.push(user)
     this.usersCount++
 }
 
@@ -58,6 +59,14 @@ Data.prototype.findUserByUsername = function (username) {
 Data.prototype.insertPet = function (pet) {
     this.pets.push(pet)
     this.petsCount++
+}
+
+Data.prototype.setLoggedInUserId = function (userId) {
+    this.loggedInUserId = userId
+}
+
+Data.prototype.getLoggedInUserId = function () {
+    return this.loggedInUserId
 }
 
 // instance
