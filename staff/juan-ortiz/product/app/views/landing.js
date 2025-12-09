@@ -1,5 +1,3 @@
-// landing
-
 const landingView = document.createElement('div')
 // landingView.style.display = 'none'
 
