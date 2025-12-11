@@ -88,6 +88,32 @@ addPetForm.addEventListener('submit', function (event) {
         addPetForm.reset()
         addPetFeedback.textContent = ''
 
+        for (let i = homePetList.children.length - 1; i >= 0; i--) {
+            const child = homePetList.children[i]
+
+            homePetList.removeChild(child)
+        }
+
+        const pets = logic.getPets()
+
+        for (let i = 0; i < pets.length; i++) {
+            const pet = pets[i]
+
+            const petItem = document.createElement('li')
+            petItem.className = 'flex'
+
+            const image = document.createElement('img')
+            image.src = pet.image
+            image.className = 'rounded-[50%] w-20'
+            petItem.appendChild(image)
+
+            const name = document.createElement('p')
+            name.textContent = pet.name
+            petItem.appendChild(name)
+
+            homePetList.appendChild(petItem)
+        }
+
         addPetView.style.display = 'none'
         homeView.style.display = ''
     } catch (error) {

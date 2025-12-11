@@ -1,36 +1,41 @@
-const registerView = document.createElement('div')
-registerView.style.display = 'none'
+const registerView = createView()
+hideView
 
-const registerTitle = document.createElement('h1')
-registerTitle.textContent = 'MyPet'
-registerTitle.className = 'font-bold text-xl'
-registerView.appendChild(registerTitle)
+const registerTitle = createTitle()
+setTextContent(registerTitle, 'MyPet')
+setClass(registerTitle, 'font-bold text-xl')
+addChild(registerView, registerTitle)
 
-const registerSubtitle = document.createElement('h2')
-registerSubtitle.textContent = 'Register'
-registerSubtitle.className = 'font-bold'
-registerView.appendChild(registerSubtitle)
+const registerSubtitle = createTitle2()
+setTextContent(registerSubtitle, 'Register')
+setClass(registerSubtitle, 'font-bold')
+addChild(registerView, registerSubtitle)
 
-const registerForm = document.createElement('form')
-registerForm.className = 'flex flex-col'
-const registerNameLabel = document.createElement('label')
-registerNameLabel.textContent = 'Name'
-registerNameLabel.htmlFor = 'name'
-registerForm.appendChild(registerNameLabel)
-const registerNameInput = document.createElement('input')
-registerNameInput.id = 'name'
-registerNameInput.type = 'text'
-registerNameInput.className = 'border px-1'
-registerForm.appendChild(registerNameInput)
-const registerEmailLabel = document.createElement('label')
-registerEmailLabel.textContent = 'Email'
-registerEmailLabel.htmlFor = 'email'
-registerForm.appendChild(registerEmailLabel)
-const registerEmailInput = document.createElement('input')
-registerEmailInput.id = 'email'
-registerEmailInput.type = 'email'
-registerEmailInput.className = 'border px-1'
-registerForm.appendChild(registerEmailInput)
+const registerForm = creteLebel()
+setClass(registerForm, 'flex flex-col')
+
+const registerNameLabel = createLabel()
+setTextContent(registerNameLabel, 'Name')
+setFor(registerForm, 'name')
+addChild(registerForm, registerNameLabel)
+
+const registerNameInput = createInput()
+setId(registerNameInput, 'name')
+setType(registerNameInput, 'text')
+setClass(registerForm, registerNameInput)
+addChild(registerForm, registerNameInput)
+
+const registerEmailLabel = createLabel()
+setTextContent(registerEmailLabel, 'Email')
+setFor(registerEmailLabel, 'email')
+addChild(registerForm, registerEmailLabel)
+
+const registerEmailInput = createInput()
+setId(registerEmailInput, 'Email')
+setType(registerEmailInput, 'email')
+setClass(registerForm, registerEmalIput)
+addChild(registerForm, registerEmailInput)
+
 const registerUsernameLabel = document.createElement('label')
 registerUsernameLabel.textContent = 'Username'
 registerUsernameLabel.htmlFor = 'username'
