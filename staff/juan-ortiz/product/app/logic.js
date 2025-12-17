@@ -17,11 +17,11 @@ Logic.prototype.registerUser = function (name, email, username, password, passwo
     if (typeof passwordRepeat !== 'string') throw new Error('invalid passwordRepeat type')
     if (passwordRepeat.length < 8) throw new Error('invalid passwordRepeat length')
 
-    if (password !== passwordRepeat) throw new Error('password do not match')
+    if (password !== passwordRepeat) throw new Error('passwords do not match')
 
     let user = data.findUserByEmail(email)
 
-    if (user !== null) throw new Error('user email already exist')
+    if (user !== null) throw new Error('user email already exists')
 
     user = data.findUserByUsername(username)
 
@@ -34,10 +34,10 @@ Logic.prototype.registerUser = function (name, email, username, password, passwo
 
 Logic.prototype.loginUser = function (username, password) {
     if (typeof username !== 'string') throw new Error('invalid username type')
-    if (username.length < 3) throw new Error('invalid username lengrth')
+    if (username.length < 3) throw new Error('invalid username length')
 
     if (typeof password !== 'string') throw new Error('invalid password type')
-    if (password.length < 8) throw new Error('invalid password  length')
+    if (password.length < 8) throw new Error('invalid password length')
 
     const user = data.findUserByUsername(username)
 
