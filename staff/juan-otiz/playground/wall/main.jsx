@@ -10,39 +10,33 @@ function App() {
     const messages = messagesState[0]
     const setMessages = messagesState[1]
 
-    const handleTitleClick = event => {
-        event.preventDefault()
-
-        console.log('title clicked')
-    }
-
     const handleMessageSubmit = event => {
         event.preventDefault()
 
         const form = event.target
 
-        const message = form.message.value
         const name = form.name.value
+        const message = form.message.value
 
-        const date = new Date()
-        const newMessage = message + ' (' + name + ', ' + date.toLocaleDateString() + ')'
+        try {
+            logic.addMessage(name, message)
 
-        // WARN! this is not the way in react
-        // messages.push(newMessage) 
+            form.reset()
 
-        const newMessages = []
+            const messages = logic.getAllMessages()
 
-        for (let i = 0; i < messages.length; i++) {
-            const message = messages[i]
+            const newMessages = []
 
-            newMessages.push(message)
+            for (let i = 0; i < messages.length; i++) {
+                const message = messages[i]
+
+                newMessages.push(message)
+            }
+
+            setMessages(newMessages)
+        } catch (error) {
+            console.error(error)
         }
-
-        newMessages.push(newMessage)
-
-        setMessages(newMessages)
-
-        form.reset()
     }
 
     console.log('App -> render')
@@ -52,30 +46,32 @@ function App() {
     for (let i = 0; i < messages.length; i++) {
         const message = messages[i]
 
+        const messageString = message.text + '(' + message.author + ', ' + message.date + ')'
+
         const listItem = <li>
-            <p>{message}</p>
+            <p>{messageString}</p>
         </li>
 
         listItems.push(listItem)
     }
 
     return <div className="flex flex-col gap-2 p-2">
-        <h1 className="text-3xl cursor-pointer" onClick={handleTitleClick}>Wall</h1>
+        <h1 className="text-3xl cursor-pointer">Wall</h1>
 
         <ul className="p-2">
             {listItems}
         </ul>
 
-        <form className="flex flex-col gap-2 border p-2" onSubmit={handleMessageSubmit}>
+        <form className="flex flex-col gap-2 border rounded-md px-3 py-2" onSubmit={handleMessageSubmit}>
             <h2>Leave your message on the wall!</h2>
 
             <label htmlFor="message">Message</label>
-            <input className="border" type="text" id="message" placeholder="message" />
+            <input className="border rounded-md px-3" type="text" id="message" placeholder="message" />
 
             <label htmlFor="name">Name</label>
-            <input className="border" type="text" id="name" placeholder="name" />
+            <input className="border rounded-md px-3" type="text" id="name" placeholder="name" />
 
-            <button className="border bg-black text-white cursor-pointer" type="submit">Send</button>
+            <button className="border rounded-md px-3 py-2 bg-black text-white cursor-pointer" type="submit">Send</button>
         </form>
     </div>
 }
