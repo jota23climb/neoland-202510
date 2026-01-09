@@ -82,7 +82,7 @@ function App() {
                     <input className="border" id="body" />
                 </div>
 
-                <button className="border border-black bg-black text-white text-sm" type="submit">Create</button>
+                <button className="border border-black bg-black text-white text-sm rounded-full px-4 py-2" type="submit">Create</button>
             </form>
         </div>
 
